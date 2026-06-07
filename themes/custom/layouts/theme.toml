@@ -1,0 +1,8 @@
+﻿name: "Custom Timeline Waterfall Theme"
+license: "MIT"
+licenselink: "https://github.com/yourname/custom-theme/blob/master/LICENSE"
+description: "时间线瀑布流主题"
+homepage: "https://github.com/yourname/custom-theme"
+tags: ["blog", "timeline", "waterfall", "responsive"]
+features: ["responsive", "timeline", "waterfall"]
+min_version: "0.100.0"
