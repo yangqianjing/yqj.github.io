@@ -1,0 +1,23 @@
+﻿baseURL: 'https://yangqianjing.github.io/'
+languageCode: 'zh-CN'
+title: '我的个人博客'
+theme: 'custom'
+
+params:
+  github: 'https://github.com/yangqianjing'
+  email: '2932268642@qq.com'
+
+menu:
+  main:
+    - name: 首页
+      url: /
+      weight: 1
+    - name: 文章
+      url: /posts/
+      weight: 2
+    - name: 标签
+      url: /tags/
+      weight: 3
+    - name: 关于
+      url: /about/
+      weight: 4
