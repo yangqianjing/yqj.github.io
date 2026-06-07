@@ -1,4 +1,4 @@
-﻿{{ define "main" }}
+{{ define "main" }}
 <div class="single-post">
     <a href="/" class="back-link">← 返回首页</a>
     <article>
@@ -18,4 +18,114 @@
         </div>
     </article>
 </div>
+
+<style>
+/* 文章详情页额外样式 */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post-content table th,
+.post-content table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e6ed;
+    text-align: left;
+}
+
+.post-content table th {
+    background: #f5f7fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.post-content table tr:hover {
+    background: #f9fafb;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #666;
+    background: #f5f7fa;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 4px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-content a {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.post-content a:hover {
+    border-bottom-color: #667eea;
+}
+
+.post-content hr {
+    border: none;
+    border-top: 2px solid #e0e6ed;
+    margin: 2rem 0;
+}
+
+.post-content pre code {
+    background: #2d2d2d !important;
+    color: #f8f8f2 !important;
+    padding: 0 !important;
+}
+
+.post-content :not(pre) > code {
+    background: #f5f7fa;
+    color: #e83e8c;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.post-content ol,
+.post-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 0.5rem;
+}
+
+.post-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    color: #764ba2;
+    font-size: 1.4rem;
+}
+
+.post-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: #555;
+    font-size: 1.2rem;
+}
+</style>
 {{ end }}
