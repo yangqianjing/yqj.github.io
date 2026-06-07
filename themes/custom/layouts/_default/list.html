@@ -1,0 +1,70 @@
+﻿{{ define "main" }}
+<!-- 头部 -->
+<header>
+    <h1>时光轴 · 记录成长</h1>
+    <p>用文字定格每一个值得纪念的瞬间</p>
+</header>
+
+<!-- 主容器 -->
+<div class="main-container">
+    <!-- 时间轴侧边栏 -->
+    <aside class="timeline-sidebar">
+        {{ $years := slice }}
+        {{ range .Site.RegularPages.ByDate.Reverse }}
+            {{ $year := .Date.Format "2006" }}
+            {{ if not (in $years $year) }}
+                {{ $years = $years | append $year }}
+            {{ end }}
+        {{ end }}
+        
+        {{ range $years }}
+            {{ $currentYear := . }}
+            <div class="timeline-year">
+                <div class="year-label">{{ . }}</div>
+                <ul class="timeline-months">
+                    {{ $months := slice }}
+                    {{ range $.Site.RegularPages.ByDate.Reverse }}
+                        {{ if eq (.Date.Format "2006") $currentYear }}
+                            {{ $month := .Date.Format "1月" }}
+                            {{ if not (in $months $month) }}
+                                <li>{{ $month }}</li>
+                                {{ $months = $months | append $month }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+        {{ end }}
+    </aside>
+
+    <!-- 瀑布流内容区 -->
+    <main class="waterfall-container">
+        <div class="waterfall">
+            {{ $icons := slice "📝" "🚀" "💻" "🎨" "🌐" "🔧" "🐳" "📚" "🎯" "⚡" "🎪" "🎭" }}
+            {{ range $index, $page := .Site.RegularPages.ByDate.Reverse }}
+                {{ if eq $page.Type "posts" }}
+                    <article class="article-card">
+                        <a href="{{ $page.RelPermalink }}">
+                            <div class="article-image">{{ index $icons (mod $index 12) }}</div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-date">{{ $page.Date.Format "2006-01-02" }}</span>
+                                    {{ with index $page.Params.tags 0 }}
+                                        <span class="article-tag">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                                <h2 class="article-title">{{ $page.Title }}</h2>
+                                <p class="article-excerpt">{{ $page.Summary | truncate 100 }}</p>
+                                <div class="article-stats">
+                                    <span>👁 {{ mul (add (mod $index 10) 1) (add (mod $index 5) 1) }}00</span>
+                                    <span>❤️ {{ mul (add (mod $index 7) 1) (add (mod $index 3) 1) }}0</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                {{ end }}
+            {{ end }}
+        </div>
+    </main>
+</div>
+{{ end }}

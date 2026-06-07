@@ -1,0 +1,21 @@
+﻿{{ define "main" }}
+<div class="single-post">
+    <a href="/" class="back-link">← 返回首页</a>
+    <article>
+        <h1>{{ .Title }}</h1>
+        <div class="post-meta">
+            <span>📅 {{ .Date.Format "2006年01月02日" }}</span>
+            {{ with .Params.tags }}
+                <span style="margin-left: 1rem;">🏷️ 
+                {{ range . }}
+                    <a href="/tags/{{ . | urlize }}" style="color: #667eea; text-decoration: none;">{{ . }}</a> 
+                {{ end }}
+                </span>
+            {{ end }}
+        </div>
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+    </article>
+</div>
+{{ end }}
