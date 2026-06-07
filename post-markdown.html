@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何使用 Markdown 写博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        article {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .post-meta {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        article h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        article h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        article h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        article p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        article ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        article li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+
+        pre code {
+            color: #333;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+        }
+
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s;
+        }
+
+        .back-link:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ 我的个人博客</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">首页</a>
+            <a href="about.html">关于我</a>
+            <a href="https://github.com/yangqianjing" target="_blank">GitHub</a>
+        </nav>
+
+        <article>
+            <div class="post-meta">2026-06-07</div>
+            <div class="tags">
+                <span class="tag">Markdown</span>
+                <span class="tag">教程</span>
+                <span class="tag">写作</span>
+            </div>
+
+            <h1>如何使用 Markdown 写博客</h1>
+
+            <p>Markdown 是一种轻量级标记语言，非常适合写博客。</p>
+
+            <h2>基础语法</h2>
+
+            <h3>标题</h3>
+            <pre><code># 一级标题
+## 二级标题
+### 三级标题</code></pre>
+
+            <h3>强调</h3>
+            <ul>
+                <li><strong>粗体</strong>：<code>**粗体**</code></li>
+                <li><em>斜体</em>：<code>*斜体*</code></li>
+                <li><del>删除线</del>：<code>~~删除线~~</code></li>
+            </ul>
+
+            <h3>列表</h3>
+            <p>无序列表：</p>
+            <ul>
+                <li>项目 1</li>
+                <li>项目 2</li>
+                <li>项目 3</li>
+            </ul>
+
+            <p>有序列表：</p>
+            <ol>
+                <li>第一步</li>
+                <li>第二步</li>
+                <li>第三步</li>
+            </ol>
+
+            <h3>代码</h3>
+            <p>行内代码：<code>console.log('Hello')</code></p>
+            <p>代码块：</p>
+            <pre><code>function greet(name) {
+  console.log(`Hello, ${name}!`);
+}</code></pre>
+
+            <h3>链接和图片</h3>
+            <ul>
+                <li>链接：<code>[文字](https://example.com)</code></li>
+                <li>图片：<code>![描述](图片链接)</code></li>
+            </ul>
+
+            <h3>引用</h3>
+            <blockquote>
+                这是一段引用文字。<br>
+                可以有多行。
+            </blockquote>
+
+            <h2>进阶技巧</h2>
+
+            <h3>表格</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>标题1</th>
+                        <th>标题2</th>
+                        <th>标题3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>内容1</td>
+                        <td>内容2</td>
+                        <td>内容3</td>
+                    </tr>
+                    <tr>
+                        <td>内容4</td>
+                        <td>内容5</td>
+                        <td>内容6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>任务列表</h3>
+            <ul>
+                <li>✓ 完成的任务</li>
+                <li>□ 未完成的任务</li>
+            </ul>
+
+            <p>希望这篇教程能帮助你快速上手 Markdown 写作！</p>
+
+            <a href="index.html" class="back-link">← 返回首页</a>
+        </article>
+
+        <footer>
+            <p>© 2026 <a href="https://github.com/yangqianjing">yangqianjing</a> · 用 ❤️ 构建</p>
+        </footer>
+    </div>
+</body>
+</html>
